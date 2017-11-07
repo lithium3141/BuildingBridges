@@ -12,6 +12,7 @@
 		22E8CF431FB2553E00FA7EBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22E8CF411FB2553E00FA7EBC /* Main.storyboard */; };
 		22E8CF451FB2553E00FA7EBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22E8CF441FB2553E00FA7EBC /* Assets.xcassets */; };
 		22E8CF481FB2553E00FA7EBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22E8CF461FB2553E00FA7EBC /* LaunchScreen.storyboard */; };
+		22E8CF521FB2558200FA7EBC /* DataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E8CF511FB2558200FA7EBC /* DataStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		22E8CF441FB2553E00FA7EBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22E8CF471FB2553E00FA7EBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22E8CF491FB2553E00FA7EBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22E8CF4F1FB2558200FA7EBC /* BuildingBridges-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BuildingBridges-Bridging-Header.h"; sourceTree = "<group>"; };
+		22E8CF501FB2558200FA7EBC /* DataStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataStore.h; sourceTree = "<group>"; };
+		22E8CF511FB2558200FA7EBC /* DataStore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +60,13 @@
 			children = (
 				22E8CF3D1FB2553E00FA7EBC /* AppDelegate.swift */,
 				22E8CF3F1FB2553E00FA7EBC /* ViewController.swift */,
+				22E8CF501FB2558200FA7EBC /* DataStore.h */,
+				22E8CF511FB2558200FA7EBC /* DataStore.m */,
 				22E8CF411FB2553E00FA7EBC /* Main.storyboard */,
 				22E8CF441FB2553E00FA7EBC /* Assets.xcassets */,
 				22E8CF461FB2553E00FA7EBC /* LaunchScreen.storyboard */,
 				22E8CF491FB2553E00FA7EBC /* Info.plist */,
+				22E8CF4F1FB2558200FA7EBC /* BuildingBridges-Bridging-Header.h */,
 			);
 			path = BuildingBridges;
 			sourceTree = "<group>";
@@ -96,6 +103,7 @@
 				TargetAttributes = {
 					22E8CF391FB2553E00FA7EBC = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -138,6 +146,7 @@
 			files = (
 				22E8CF401FB2553E00FA7EBC /* ViewController.swift in Sources */,
 				22E8CF3E1FB2553E00FA7EBC /* AppDelegate.swift in Sources */,
+				22E8CF521FB2558200FA7EBC /* DataStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,12 +283,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 888CL5L8M4;
 				INFOPLIST_FILE = BuildingBridges/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lithium3141.BuildingBridges;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BuildingBridges/BuildingBridges-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -289,12 +301,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 888CL5L8M4;
 				INFOPLIST_FILE = BuildingBridges/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lithium3141.BuildingBridges;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BuildingBridges/BuildingBridges-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
