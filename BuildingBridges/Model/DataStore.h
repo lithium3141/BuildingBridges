@@ -11,8 +11,8 @@
 #import "Genre.h"
 
 typedef enum {
-    EnumerationOptionReverse = 1,
-    EnumerationOptionListEveryGenre,
+    EnumerationOptionReverse = 1 << 0,
+    EnumerationOptionListEveryGenre = 1 << 1,
 } EnumerationOptions;
 
 @interface DataStore : NSObject
