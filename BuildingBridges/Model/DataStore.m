@@ -25,12 +25,31 @@
     return instance;
 }
 
+- (id)init;
+{
+    if (!(self = [super init])) {
+        return nil;
+    }
+    
+    _songs = [NSMutableSet set];
+    
+    AnimojiKaraoke *bohemianRhapsody = [[AnimojiKaraoke alloc] init];
+    bohemianRhapsody.songTitle = @"Bohemian Rhapsody";
+    bohemianRhapsody.originalArtist = @"Queen";
+    bohemianRhapsody.animatorName = @"Mia Harrison";
+    bohemianRhapsody.genre = GenreRock;
+    bohemianRhapsody.url = [NSURL URLWithString:@"https://twitter.com/ManxomeMia/status/926660732162154496"];
+    [_songs addObject:bohemianRhapsody];
+    
+    return self;
+}
+
 - (NSArray *)songsMatchingPredicate:(NSPredicate *)predicate sortedByDescriptors:(NSArray *)sortDescriptors error:(NSError **)error;
 {
     return [[self.songs filteredSetUsingPredicate:predicate] sortedArrayUsingDescriptors:sortDescriptors];
 }
 
-- (void)enumerateSongsByGenre:(Genre)genre options:(EnumerationOptions)options block:(void (^)(Genre, NSArray *))handler;
+- (void)enumerateSongsByGenreWithOptions:(EnumerationOptions)options block:(void (^)(Genre, NSArray *))handler;
 {
     NSMutableDictionary *groups = [NSMutableDictionary dictionary];
     for (AnimojiKaraoke *song in self.songs) {

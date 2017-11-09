@@ -21,3 +21,5 @@ typedef enum {
 
 extern const NSUInteger GenreCount;
 extern const Genre GenreUnknown;
+
+extern NSString *GenreLocalizedName(Genre genre);

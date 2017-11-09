@@ -21,6 +21,6 @@ typedef enum {
 
 - (NSArray *)songsMatchingPredicate:(NSPredicate *)predicate sortedByDescriptors:(NSArray *)sortDescriptors error:(NSError **)error;
 
-- (void)enumerateSongsByGenre:(Genre)genre options:(EnumerationOptions)options block:(void (^)(Genre, NSArray *))handler;
+- (void)enumerateSongsByGenreWithOptions:(EnumerationOptions)options block:(void (^)(Genre, NSArray *))handler;
 
 @end
