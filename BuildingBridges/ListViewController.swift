@@ -17,7 +17,11 @@ class SongTableViewCell: UITableViewCell {
     var song: AnimojiKaraoke? {
         didSet {
             guard let song = song else { return }
-            songNameLabel.text = song.songTitle
+            
+            let title = song.songTitle
+            let displayTitle = "“" + title! + "”"
+            songNameLabel.text = displayTitle
+            
             originalArtistLabel.text = song.originalArtist
             animatorLabel.text = song.animatorName
         }
