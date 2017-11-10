@@ -86,7 +86,7 @@ class ListViewController: UITableViewController, UISearchResultsUpdating, UISear
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let genre = data[section].genre
         guard genre != GenreUnknown else { return nil }
-        return GenreLocalizedName(genre)
+        return genre.localizedName
     }
     
     // MARK: UISearchResultsUpdating

@@ -16,6 +16,8 @@
 		22E8CF521FB2558200FA7EBC /* DataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E8CF511FB2558200FA7EBC /* DataStore.m */; };
 		22E8CF561FB2B33F00FA7EBC /* AnimojiKaraoke.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E8CF551FB2B33F00FA7EBC /* AnimojiKaraoke.m */; };
 		22E8CF591FB2B7CD00FA7EBC /* Genre.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E8CF581FB2B7CD00FA7EBC /* Genre.m */; };
+		22E8CF5B1FB536D600FA7EBC /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E8CF5A1FB536D600FA7EBC /* Genre.swift */; };
+		22E8CF5D1FB5374100FA7EBC /* AnimojiKaraoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E8CF5C1FB5374100FA7EBC /* AnimojiKaraoke.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		22E8CF551FB2B33F00FA7EBC /* AnimojiKaraoke.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimojiKaraoke.m; sourceTree = "<group>"; };
 		22E8CF571FB2B6DB00FA7EBC /* Genre.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Genre.h; sourceTree = "<group>"; };
 		22E8CF581FB2B7CD00FA7EBC /* Genre.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Genre.m; sourceTree = "<group>"; };
+		22E8CF5A1FB536D600FA7EBC /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		22E8CF5C1FB5374100FA7EBC /* AnimojiKaraoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimojiKaraoke.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +89,10 @@
 				22E8CF501FB2558200FA7EBC /* DataStore.h */,
 				22E8CF511FB2558200FA7EBC /* DataStore.m */,
 				22E8CF541FB2B33F00FA7EBC /* AnimojiKaraoke.h */,
+				22E8CF5C1FB5374100FA7EBC /* AnimojiKaraoke.swift */,
 				22E8CF551FB2B33F00FA7EBC /* AnimojiKaraoke.m */,
 				22E8CF571FB2B6DB00FA7EBC /* Genre.h */,
+				22E8CF5A1FB536D600FA7EBC /* Genre.swift */,
 				22E8CF581FB2B7CD00FA7EBC /* Genre.m */,
 			);
 			path = Model;
@@ -169,8 +175,10 @@
 				22C1B5301FB420E100C18485 /* WebViewController.swift in Sources */,
 				22E8CF401FB2553E00FA7EBC /* ListViewController.swift in Sources */,
 				22E8CF591FB2B7CD00FA7EBC /* Genre.m in Sources */,
+				22E8CF5D1FB5374100FA7EBC /* AnimojiKaraoke.swift in Sources */,
 				22E8CF3E1FB2553E00FA7EBC /* AppDelegate.swift in Sources */,
 				22E8CF521FB2558200FA7EBC /* DataStore.m in Sources */,
+				22E8CF5B1FB536D600FA7EBC /* Genre.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

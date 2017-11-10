@@ -18,8 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *originalArtist;
 @property (nonatomic, copy) NSString *animatorName;
 
-@property (nonatomic, readonly) BOOL hasGenre;
-@property (nonatomic, assign) Genre genre;
+@property (nonatomic, readonly) BOOL hasGenre NS_SWIFT_UNAVAILABLE("AnimojiKaraoke.genre is optional in Swift");
+@property (nonatomic, assign) Genre genre NS_REFINED_FOR_SWIFT;
 
 @property (nonatomic, copy) NSURL *url;
 

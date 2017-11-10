@@ -25,6 +25,6 @@ typedef NS_ENUM(NSUInteger, Genre) {
 extern const NSUInteger GenreCount;
 extern const Genre GenreUnknown;
 
-extern NSString *GenreLocalizedName(Genre genre);
+extern NSString *GenreLocalizedName(Genre genre) NS_REFINED_FOR_SWIFT;
 
 NS_ASSUME_NONNULL_END
