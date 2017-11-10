@@ -27,7 +27,7 @@ typedef void (^GenreEnumerationHandler)(Genre, NSArray<AnimojiKaraoke *> *);
 
 - (nullable NSArray<AnimojiKaraoke *> *)songsMatchingPredicate:(NSPredicate *)predicate sortedByDescriptors:(nullable NSArray<NSSortDescriptor *> *)sortDescriptors error:(NSError **)error;
 
-- (void)enumerateSongsByGenreWithOptions:(EnumerationOptions)options block:(nullable GenreEnumerationHandler)handler;
+- (void)enumerateSongsByGenreWithOptions:(EnumerationOptions)options block:(nullable GenreEnumerationHandler NS_NOESCAPE)handler;
 
 @end
 
