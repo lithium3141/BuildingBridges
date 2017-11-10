@@ -10,6 +10,8 @@
 
 #import "Genre.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface AnimojiKaraoke : NSObject
 
 @property (nonatomic, copy) NSString *songTitle;
@@ -22,3 +24,5 @@
 @property (nonatomic, copy) NSURL *url;
 
 @end
+
+NS_ASSUME_NONNULL_END

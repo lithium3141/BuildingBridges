@@ -19,7 +19,7 @@ class SongTableViewCell: UITableViewCell {
             guard let song = song else { return }
             
             let title = song.songTitle
-            let displayTitle = "“" + title! + "”"
+            let displayTitle = "“" + title + "”"
             songNameLabel.text = displayTitle
             
             originalArtistLabel.text = song.originalArtist

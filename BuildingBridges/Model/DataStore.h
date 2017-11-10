@@ -10,6 +10,8 @@
 
 #import "Genre.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 typedef enum {
     EnumerationOptionReverse = 1 << 0,
     EnumerationOptionListEveryGenre = 1 << 1,
@@ -19,8 +21,10 @@ typedef enum {
 
 + (DataStore *)sharedInstance;
 
-- (NSArray *)songsMatchingPredicate:(NSPredicate *)predicate sortedByDescriptors:(NSArray *)sortDescriptors error:(NSError **)error;
+- (nullable NSArray *)songsMatchingPredicate:(NSPredicate *)predicate sortedByDescriptors:(nullable NSArray *)sortDescriptors error:(NSError **)error;
 
 - (void)enumerateSongsByGenreWithOptions:(EnumerationOptions)options block:(void (^)(Genre, NSArray *))handler;
 
 @end
+
+NS_ASSUME_NONNULL_END

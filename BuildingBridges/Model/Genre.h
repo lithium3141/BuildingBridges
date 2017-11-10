@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 typedef enum {
     GenreBlues,
     GenreClassical,
@@ -24,3 +26,5 @@ extern const NSUInteger GenreCount;
 extern const Genre GenreUnknown;
 
 extern NSString *GenreLocalizedName(Genre genre);
+
+NS_ASSUME_NONNULL_END
