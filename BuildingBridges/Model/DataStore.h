@@ -17,13 +17,15 @@ typedef enum {
     EnumerationOptionListEveryGenre = 1 << 1,
 } EnumerationOptions;
 
+typedef void (^GenreEnumerationHandler)(Genre, NSArray *);
+
 @interface DataStore : NSObject
 
 + (DataStore *)sharedInstance;
 
 - (nullable NSArray *)songsMatchingPredicate:(NSPredicate *)predicate sortedByDescriptors:(nullable NSArray *)sortDescriptors error:(NSError **)error;
 
-- (void)enumerateSongsByGenreWithOptions:(EnumerationOptions)options block:(void (^)(Genre, NSArray *))handler;
+- (void)enumerateSongsByGenreWithOptions:(EnumerationOptions)options block:(nullable GenreEnumerationHandler)handler;
 
 @end
 
