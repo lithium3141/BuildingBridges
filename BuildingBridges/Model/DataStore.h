@@ -10,6 +10,8 @@
 
 #import "Genre.h"
 
+@class AnimojiKaraoke;
+
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_OPTIONS(NSUInteger, EnumerationOptions) {
@@ -17,13 +19,13 @@ typedef NS_OPTIONS(NSUInteger, EnumerationOptions) {
     EnumerationOptionListEveryGenre = 1 << 1,
 };
 
-typedef void (^GenreEnumerationHandler)(Genre, NSArray *);
+typedef void (^GenreEnumerationHandler)(Genre, NSArray<AnimojiKaraoke *> *);
 
 @interface DataStore : NSObject
 
 @property (nonatomic, readonly, class) DataStore *sharedInstance;
 
-- (nullable NSArray *)songsMatchingPredicate:(NSPredicate *)predicate sortedByDescriptors:(nullable NSArray *)sortDescriptors error:(NSError **)error;
+- (nullable NSArray<AnimojiKaraoke *> *)songsMatchingPredicate:(NSPredicate *)predicate sortedByDescriptors:(nullable NSArray<NSSortDescriptor *> *)sortDescriptors error:(NSError **)error;
 
 - (void)enumerateSongsByGenreWithOptions:(EnumerationOptions)options block:(nullable GenreEnumerationHandler)handler;
 

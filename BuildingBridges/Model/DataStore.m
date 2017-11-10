@@ -80,7 +80,7 @@
     return [[self.songs filteredSetUsingPredicate:predicate] sortedArrayUsingDescriptors:sortDescriptors];
 }
 
-- (void)enumerateSongsByGenreWithOptions:(EnumerationOptions)options block:(void (^)(Genre, NSArray *))handler;
+- (void)enumerateSongsByGenreWithOptions:(EnumerationOptions)options block:(void (^)(Genre, NSArray<AnimojiKaraoke *> *))handler;
 {
     NSMutableDictionary *groups = [NSMutableDictionary dictionary];
     for (AnimojiKaraoke *song in self.songs) {
