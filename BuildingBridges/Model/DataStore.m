@@ -53,6 +53,14 @@
     numb.url = [NSURL URLWithString:@"https://twitter.com/drbrydges/status/926611859280711680"];
     [songs addObject:numb];
     
+    AnimojiKaraoke *always = [[AnimojiKaraoke alloc] init];
+    always.songTitle = @"Always";
+    always.originalArtist = @"Erasure";
+    always.animatorName = @"Popadom Priest";
+    always.genre = GenrePop;
+    always.url = [NSURL URLWithString:@"https://twitter.com/GeriatricGamer/status/926493361434976256"];
+    [songs addObject:always];
+    
     return songs;
 }
 
