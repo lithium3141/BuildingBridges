@@ -31,21 +31,33 @@ class SongTableViewCell: UITableViewCell {
 
 // MARK: -
 
-class ListViewController: UITableViewController {
+class ListViewController: UITableViewController, UISearchResultsUpdating, UISearchControllerDelegate {
     
     typealias Section = (genre: Genre, songs: [AnimojiKaraoke])
     private var data: [Section] = []
+    
+    private func loadGroupedData() {
+        data = []
+        DataStore.sharedInstance().enumerateSongsByGenre(with: EnumerationOptionListEveryGenre) { (genre, songs) in
+            guard let realSongs = songs as? [AnimojiKaraoke] else { return }
+            let section = (genre: genre, songs: realSongs)
+            self.data.append(section)
+        }
+    }
     
     // MARK: UIViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DataStore.sharedInstance().enumerateSongsByGenre(with: EnumerationOptionListEveryGenre) { (genre, songs) in
-            guard let realSongs = songs as? [AnimojiKaraoke] else { return }
-            let section = (genre: genre, songs: realSongs)
-            self.data.append(section)
-        }
+        loadGroupedData()
+        
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.delegate = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        navigationItem.searchController = searchController
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -73,7 +85,30 @@ class ListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return GenreLocalizedName(data[section].genre)
+        let genre = data[section].genre
+        guard genre != GenreUnknown else { return nil }
+        return GenreLocalizedName(genre)
+    }
+    
+    // MARK: UISearchResultsUpdating
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else { return }
+        let predicate = NSPredicate(format: "%K CONTAINS %@", "songTitle", text)
+        let songs = try! DataStore.sharedInstance().songs(matching: predicate, sortedByDescriptors: nil)
+        data = [(genre: GenreUnknown, songs as! [AnimojiKaraoke])]
+        tableView.reloadData()
+    }
+    
+    // MARK: UISearchControllerDelegate
+    
+    func didPresentSearchController(_ searchController: UISearchController) {
+        tableView.reloadData()
+    }
+    
+    func didDismissSearchController(_ searchController: UISearchController) {
+        loadGroupedData()
+        tableView.reloadData()
     }
 
 }
