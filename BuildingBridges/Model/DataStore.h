@@ -23,7 +23,7 @@ typedef void (^GenreEnumerationHandler)(Genre, NSArray<AnimojiKaraoke *> *);
 
 @interface DataStore : NSObject
 
-@property (nonatomic, readonly, class) DataStore *sharedInstance;
+@property (nonatomic, readonly, class) DataStore *sharedInstance NS_SWIFT_NAME(shared);
 
 - (nullable NSArray<AnimojiKaraoke *> *)songsMatchingPredicate:(NSPredicate *)predicate sortedByDescriptors:(nullable NSArray<NSSortDescriptor *> *)sortDescriptors error:(NSError **)error;
 

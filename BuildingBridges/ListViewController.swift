@@ -38,7 +38,7 @@ class ListViewController: UITableViewController, UISearchResultsUpdating, UISear
     
     private func loadGroupedData() {
         data = []
-        DataStore.sharedInstance.enumerateSongsByGenre(options: [.listEveryGenre]) { (genre, songs) in
+        DataStore.shared.enumerateSongsByGenre(options: [.listEveryGenre]) { (genre, songs) in
             let section = (genre: genre, songs: songs)
             self.data.append(section)
         }
@@ -94,7 +94,7 @@ class ListViewController: UITableViewController, UISearchResultsUpdating, UISear
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else { return }
         let predicate = NSPredicate(format: "%K CONTAINS[cd] %@", "songTitle", text)
-        let songs = try! DataStore.sharedInstance.songs(matching: predicate, sortedBy: nil)
+        let songs = try! DataStore.shared.songs(matching: predicate, sortedBy: nil)
         data = [(genre: GenreUnknown, songs)]
         tableView.reloadData()
     }
