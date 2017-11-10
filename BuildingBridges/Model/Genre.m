@@ -14,6 +14,7 @@ const Genre GenreUnknown = (Genre)NSNotFound;
 NSString *GenreLocalizedName(Genre genre) {
     switch (genre) {
         case GenreBlues: return NSLocalizedString(@"Blues", @"blues genre name");
+        case GenreClassical: return NSLocalizedString(@"Classical", @"classical genre name");
         case GenreCountry: return NSLocalizedString(@"Country", @"country genre name");
         case GenreFolk: return NSLocalizedString(@"Folk", @"folk genre name");
         case GenreHipHop: return NSLocalizedString(@"Hip-Hop", @"hip-hop genre name");

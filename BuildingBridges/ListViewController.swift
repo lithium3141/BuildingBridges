@@ -94,7 +94,7 @@ class ListViewController: UITableViewController, UISearchResultsUpdating, UISear
     
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else { return }
-        let predicate = NSPredicate(format: "%K CONTAINS %@", "songTitle", text)
+        let predicate = NSPredicate(format: "%K CONTAINS[cd] %@", "songTitle", text)
         let songs = try! DataStore.sharedInstance().songs(matching: predicate, sortedByDescriptors: nil)
         data = [(genre: GenreUnknown, songs as! [AnimojiKaraoke])]
         tableView.reloadData()

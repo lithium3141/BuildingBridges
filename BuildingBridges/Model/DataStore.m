@@ -25,13 +25,9 @@
     return instance;
 }
 
-- (id)init;
++ (NSSet *)defaultSongs;
 {
-    if (!(self = [super init])) {
-        return nil;
-    }
-    
-    _songs = [NSMutableSet set];
+    NSMutableSet *songs = [NSMutableSet set];
     
     AnimojiKaraoke *bohemianRhapsody = [[AnimojiKaraoke alloc] init];
     bohemianRhapsody.songTitle = @"Bohemian Rhapsody";
@@ -39,7 +35,26 @@
     bohemianRhapsody.animatorName = @"Mia Harrison";
     bohemianRhapsody.genre = GenreRock;
     bohemianRhapsody.url = [NSURL URLWithString:@"https://twitter.com/ManxomeMia/status/926660732162154496"];
-    [_songs addObject:bohemianRhapsody];
+    [songs addObject:bohemianRhapsody];
+    
+    AnimojiKaraoke *starWarsTheme = [[AnimojiKaraoke alloc] init];
+    starWarsTheme.songTitle = @"Star Wars Theme";
+    starWarsTheme.originalArtist = @"John Williams";
+    starWarsTheme.animatorName = @"Derek Duncan";
+    starWarsTheme.genre = GenreClassical;
+    starWarsTheme.url = [NSURL URLWithString:@"https://twitter.com/derekduncan/status/927359099079098369"];
+    [songs addObject:starWarsTheme];
+    
+    return songs;
+}
+
+- (id)init;
+{
+    if (!(self = [super init])) {
+        return nil;
+    }
+    
+    _songs = [[[self class] defaultSongs] mutableCopy];
     
     return self;
 }

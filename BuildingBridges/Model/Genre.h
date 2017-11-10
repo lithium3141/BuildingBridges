@@ -10,6 +10,7 @@
 
 typedef enum {
     GenreBlues,
+    GenreClassical,
     GenreCountry,
     GenreFolk,
     GenreHipHop,
