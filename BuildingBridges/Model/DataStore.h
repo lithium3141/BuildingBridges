@@ -21,7 +21,7 @@ typedef void (^GenreEnumerationHandler)(Genre, NSArray *);
 
 @interface DataStore : NSObject
 
-+ (DataStore *)sharedInstance;
+@property (nonatomic, readonly, class) DataStore *sharedInstance;
 
 - (nullable NSArray *)songsMatchingPredicate:(NSPredicate *)predicate sortedByDescriptors:(nullable NSArray *)sortDescriptors error:(NSError **)error;
 
