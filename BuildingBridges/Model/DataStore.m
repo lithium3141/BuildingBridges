@@ -45,6 +45,14 @@
     starWarsTheme.url = [NSURL URLWithString:@"https://twitter.com/derekduncan/status/927359099079098369"];
     [songs addObject:starWarsTheme];
     
+    AnimojiKaraoke *numb = [[AnimojiKaraoke alloc] init];
+    numb.songTitle = @"Numb";
+    numb.originalArtist = @"Linkin Park";
+    numb.animatorName = @"@drbrydges";
+    numb.genre = GenreRock;
+    numb.url = [NSURL URLWithString:@"https://twitter.com/drbrydges/status/926611859280711680"];
+    [songs addObject:numb];
+    
     return songs;
 }
 
