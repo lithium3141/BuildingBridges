@@ -38,7 +38,7 @@ class ListViewController: UITableViewController, UISearchResultsUpdating, UISear
     
     private func loadGroupedData() {
         data = []
-        DataStore.sharedInstance.enumerateSongsByGenre(with: EnumerationOptionListEveryGenre) { (genre, songs) in
+        DataStore.sharedInstance.enumerateSongsByGenre(options: [.listEveryGenre]) { (genre, songs) in
             guard let realSongs = songs as? [AnimojiKaraoke] else { return }
             let section = (genre: genre, songs: realSongs)
             self.data.append(section)

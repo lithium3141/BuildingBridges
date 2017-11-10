@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, Genre) {
     GenreBlues,
     GenreClassical,
     GenreCountry,
@@ -20,7 +20,7 @@ typedef enum {
     GenrePop,
     GenreRB,
     GenreRock,
-} Genre;
+};
 
 extern const NSUInteger GenreCount;
 extern const Genre GenreUnknown;

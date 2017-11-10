@@ -12,10 +12,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef enum {
+typedef NS_OPTIONS(NSUInteger, EnumerationOptions) {
     EnumerationOptionReverse = 1 << 0,
     EnumerationOptionListEveryGenre = 1 << 1,
-} EnumerationOptions;
+};
 
 typedef void (^GenreEnumerationHandler)(Genre, NSArray *);
 
